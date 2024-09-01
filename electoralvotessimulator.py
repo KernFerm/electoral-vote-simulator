@@ -1,4 +1,4 @@
-import random
+import csv
 
 def cast_vote(vote, candidate_1_votes, candidate_2_votes, total_votes):
     if vote == "vote 1":
@@ -19,6 +19,24 @@ def display_results(candidate_1_votes, candidate_2_votes, total_votes):
     print(f"Candidate 2: {candidate_2_votes} votes")
     print(f"Total Votes Cast: {total_votes}")
 
+def export_results_to_csv(candidate_1_votes, candidate_2_votes, total_votes, filename='vote_results.csv'):
+    """
+    Exports the voting results to a CSV file.
+
+    Args:
+        candidate_1_votes (int): The final vote count for Candidate 1.
+        candidate_2_votes (int): The final vote count for Candidate 2.
+        total_votes (int): The total number of votes cast.
+        filename (str): The name of the CSV file to write the results to.
+    """
+    with open(filename, mode='w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(["Candidate", "Votes"])
+        writer.writerow(["Candidate 1", candidate_1_votes])
+        writer.writerow(["Candidate 2", candidate_2_votes])
+        writer.writerow(["Total Votes", total_votes])
+    print(f"\nResults exported to {filename}")
+
 def main():
     # Initialize vote counts
     candidate_1_votes = 0
@@ -37,6 +55,7 @@ def main():
             candidate_1_votes, candidate_2_votes, total_votes = cast_vote(vote, candidate_1_votes, candidate_2_votes, total_votes)
 
     display_results(candidate_1_votes, candidate_2_votes, total_votes)
+    export_results_to_csv(candidate_1_votes, candidate_2_votes, total_votes)
 
 if __name__ == "__main__":
     main()
