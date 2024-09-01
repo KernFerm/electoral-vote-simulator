@@ -41,11 +41,13 @@ Candidate 2: 1 vote
 Total Votes Cast: 3
 ```
 
+
 ## Features
 
 - **Simple Voting Simulation:** Users can cast votes for two candidates.
 - **Real-time Feedback:** The program confirms each vote and notifies users of invalid commands.
 - **Final Vote Count:** Displays the total votes for each candidate and the overall number of votes.
+- **CSV Export:** The final results are saved to a CSV file for easy record-keeping and analysis.
 
 ## Future Improvements
 
@@ -54,5 +56,6 @@ Total Votes Cast: 3
 - Simulate randomized vote distributions to create more complex scenarios.
 
 ## Contributing
-- Contributions are welcome! Please feel free to submit a Pull Request with your improvements, bug fixes, or new features.
+
+Contributions are welcome! Please feel free to submit a Pull Request with your improvements, bug fixes, or new features.
 
