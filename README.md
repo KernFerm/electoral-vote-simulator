@@ -32,9 +32,9 @@ Welcome to the Electoral Votes Simulator! This Python program simulates a voting
 ![3RD](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/3RD.png)
 ### 3. Voting Screen
 ![4TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/4TH.png)
-![6TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/6TH.png)
-### 4. Voting Progress
 
+### 4. Voting Progress
+![6TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/6TH.png)
 
 ### 5. Voting Completed
 ![5TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/5TH.png)
