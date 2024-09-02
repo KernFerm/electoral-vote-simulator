@@ -1,11 +1,11 @@
 import csv
 
 def cast_vote(vote, candidate_1_votes, candidate_2_votes, total_votes):
-    if vote == "vote 1":
+    if vote in ["vote 1", "1"]:
         candidate_1_votes += 1
         total_votes += 1
         print("Vote recorded for Candidate 1!")
-    elif vote == "vote 2":
+    elif vote in ["vote 2", "2"]:
         candidate_2_votes += 1
         total_votes += 1
         print("Vote recorded for Candidate 2!")
