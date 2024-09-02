@@ -25,29 +25,26 @@ Welcome to the Electoral Votes Simulator! This Python program simulates a voting
 
 
 
-```
-put csv 
-```
-
 ## Example Usage
 
 ```
-🗳️ Electoral Votes Simulator
-🏁 Start Simulation ❌ Exit
-[User clicks 'Start Simulation']
+🗳️ Electoral Votes Simulator 🏁 Start Simulation ❌ Exit [User clicks 'Start Simulation']
 ```
-
+----
 ```
 Enter the name of Candidate 1: Alice Enter the name of Candidate 2: Bob
 ```
-
+----
 ```
-🗳️ Cast your vote: 1️⃣ for Alice 2️⃣ for Bob 0️⃣ to end voting
-[User casts votes and ends voting]
+🗳️ Cast your vote: 1️⃣ for Alice 2️⃣ for Bob 0️⃣ to end voting [User casts votes and ends voting]
 ```
 
-- Voting has ended. Here are the results: Alice: 2 votes 🗳️ Bob: 1 vote 🗳️ Total Votes Cast: 3 Results exported to vote_results.csv
 
+- Voting has ended. Here are the results:
+  - Alice: 2 votes 🗳️ 
+  - Bob: 1 vote 🗳️ 
+  - Total Votes Cast: 3 
+  - Results exported to `vote_results.csv`
 
 ## Features
 
@@ -67,12 +64,5 @@ Happy Voting! 🎉
 
 ## Acknowledgements 
 
-- Contributed - [Bubbles The Dev](https://github.com/kernferm)
-- Forked from - [jpb1991](https://github.com/jpb1991)
-
--------
--------
-
-
-
-
+- **Contributed by:** [Bubbles The Dev](https://github.com/kernferm)
+- **Forked from:** [jpb1991](https://github.com/jpb1991)
