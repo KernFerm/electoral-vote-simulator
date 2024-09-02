@@ -57,6 +57,10 @@ Contributions are welcome! Please feel free to submit a Pull Request with your i
 
 Happy Voting! 🎉
 
+## Acknowledgements 
+
+- Contributed - [Bubbles The Dev](https://github.com/kernferm)
+
 -------
 -------
 
