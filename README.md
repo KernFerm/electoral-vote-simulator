@@ -23,16 +23,7 @@ Welcome to the Electoral Votes Simulator! This Python program simulates a voting
 
 ## Screenshots
 
-![Screenshot 1](screenshots/Screenshot%202024-09-01%20220947.png)
-![Screenshot 2](screenshots/Screenshot%202024-09-01%20221153.png)
-![Screenshot 3](screenshots/Screenshot%202024-09-01%20221216.png)
-![Screenshot 4](screenshots/Screenshot%202024-09-01%20221234.png)
-![Screenshot 5](screenshots/Screenshot%202024-09-01%20221256.png)
-![Screenshot 6](screenshots/Screenshot%202024-09-01%20221307.png)
-![Screenshot 7](screenshots/Screenshot%202024-09-01%20221321.png)
-![Screenshot 8](screenshots/Screenshot%202024-09-01%20221334.png)
-![Screenshot 9](screenshots/Screenshot%202024-09-01%20221347.png)
-![Screenshot 10](screenshots/Screenshot%202024-09-01%20221408.png)
+
 
 ```
 Candidate,Votes,Percentage,Electoral Votes
