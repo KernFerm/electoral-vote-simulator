@@ -8,7 +8,7 @@ Welcome to the Electoral Votes Simulator! This Python program simulates a voting
 2. Ensure you have Python installed on your system.
 3. Run the script using the following command:
 
-    ```
+    ```bash
     python main.py
     ```
 
@@ -21,9 +21,7 @@ Welcome to the Electoral Votes Simulator! This Python program simulates a voting
 
 5. After voting ends, the results will be displayed on the screen and saved to a CSV file in the location you choose.
 
-
 ## Screenshots
-
 
 ![1ST](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/1ST.png)
 ![2ND](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/2ND.png)
@@ -40,8 +38,9 @@ Welcome to the Electoral Votes Simulator! This Python program simulates a voting
 ![13TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/13TH.png)
 ![14TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/14TH.png)
 
+## Example CSV Output
 
-```CSV
+```csv
 Candidate,Votes,Percentage,Electoral Votes
 JOHN ,1,33.33%,151
 STEVE,2,66.67%,387
@@ -51,35 +50,41 @@ Total Votes,3
 ## Example Usage
 
 ```
-🗳️ Electoral Votes Simulator 🏁 Start Simulation ❌ Exit [User clicks 'Start Simulation']
-```
-----
-```
-Enter the name of Candidate 1: Alice Enter the name of Candidate 2: Bob
-```
-----
-```
-🗳️ Cast your vote: 1️⃣ for Alice 2️⃣ for Bob 0️⃣ to end voting [User casts votes and ends voting]
+🗳️ Electoral Votes Simulator
+🏁 Start Simulation ❌ Exit
+[User clicks 'Start Simulation']
 ```
 
+```
+Enter the name of Candidate 1: Alice
+Enter the name of Candidate 2: Bob
+```
+
+```
+🗳️ Cast your vote:
+1️⃣ for Alice
+2️⃣ for Bob
+0️⃣ to end voting
+[User casts votes and ends voting]
+```
 
 - Voting has ended. Here are the results:
-  - Alice: 2 votes 🗳️ 
-  - Bob: 1 vote 🗳️ 
-  - Total Votes Cast: 3 
-  - Results exported to `vote_results.csv`
+    - Alice: 2 votes 🗳️
+    - Bob: 1 vote 🗳️
+    - Total Votes Cast: 3
+    - Results exported to vote_results.csv
 
 ## Features
 
 - **Interactive GUI:** A user-friendly graphical interface that guides users through the voting process.
-- **Simple Voting Simulation:** Users can cast votes for two candidates with real-time feedback.
-- **Final Vote Count:** Displays the total votes for each candidate and the overall number of votes.
-- **Electoral College Simulation:** The program simulates an electoral college system based on state votes.
-- **CSV Export:** The final results are saved to a CSV file for easy record-keeping and analysis.
+- **Real-Time Feedback:** Users receive instant feedback as votes are cast, with dynamic updates to the vote counts.
+- **Electoral College Simulation:** The program simulates an electoral college system based on state votes, providing a realistic representation of the voting process.
+- **Tie Handling:** The program detects ties in both popular and electoral votes and automatically restarts the voting process to ensure a clear winner.
+- **CSV Export:** The final results, including both popular and electoral votes, are saved to a CSV file for easy record-keeping and analysis.
+- **Error Handling:** Robust error handling ensures the program runs smoothly even if unexpected inputs are encountered.
 
 ## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request with your improvements, bug fixes, or new features.
+- Contributions are welcome! Please feel free to submit a Pull Request with your improvements, bug fixes, or new features.
 
 ---
 
@@ -89,3 +94,12 @@ Happy Voting! 🎉
 
 - **Contributed by:** [Bubbles The Dev](https://github.com/kernferm)
 - **Forked from:** [jpb1991](https://github.com/jpb1991)
+
+
+
+
+
+
+
+
+
