@@ -35,6 +35,9 @@
             padding: 2px 4px;
             border-radius: 4px;
         }
+        ul {
+            margin-left: 20px;
+        }
         .section {
             margin-bottom: 30px;
         }
@@ -52,85 +55,82 @@
 
         <div class="section">
             <h2>Project Overview</h2>
-            <p>The <strong>Electoral Vote Simulator</strong> is a Python-based application that simulates a voting process between two candidates through an engaging graphical user interface (GUI). Users can cast their votes for either Candidate 1 or Candidate 2, and the program will keep track of the votes. When the voting ends, the program displays the final results and exports them to a CSV file for record-keeping.</p>
+            <p>The <strong>Electoral Vote Simulator</strong> is a Python-based application designed to simulate a voting process between two candidates using a graphical user interface (GUI). The program allows users to cast their votes, view real-time results, and export the final tally to a CSV file for record-keeping and further analysis. This project is an excellent demonstration of practical programming skills, combining user interface design, dynamic data management, and file handling in a cohesive application.</p>
         </div>
 
         <div class="section">
             <h2>Purpose</h2>
-            <p>This project demonstrates the use of Python for creating interactive applications with a focus on GUI development, input handling, and data export capabilities. It serves as an educational tool for understanding basic to intermediate Python concepts and is also suitable as a portfolio piece for showcasing programming skills.</p>
+            <p>The primary purpose of this project is to showcase a range of software development skills, including Python programming, GUI creation, and data handling. The project serves both educational and professional purposes, providing a concrete example of how to build a functional application that interacts with users and manages data effectively. This simulator can be used as a learning tool or as a portfolio piece in a job interview to demonstrate coding proficiency and problem-solving abilities.</p>
         </div>
 
         <div class="section">
             <h2>Key Features</h2>
-            <h3>1. Interactive GUI</h3>
-            <p><strong>Engaging User Interface:</strong> The program features a user-friendly graphical interface that guides users through the voting process, making it accessible even for those with minimal technical experience.</p>
-            <p><strong>Simple Navigation:</strong> Users can easily start the simulation, enter candidate names, cast votes, and end the voting process with clear on-screen instructions.</p>
+            <h3>1. Interactive Graphical User Interface (GUI)</h3>
+            <p><strong>Modern UI Design:</strong> The program features a clean, intuitive interface built using Python's Tkinter library. The GUI guides users through each step of the voting process, ensuring an accessible and user-friendly experience.</p>
+            <p><strong>Engaging Interaction:</strong> Users interact with the program through buttons and input fields, making the process of casting votes straightforward and engaging. The design of the interface focuses on clarity and ease of use, which is crucial for maintaining user engagement.</p>
 
-            <h3>2. Voting Simulation</h3>
-            <p><strong>Real-Time Feedback:</strong> Users cast votes in real-time, with the program immediately updating and displaying the current vote counts for each candidate.</p>
-            <p><strong>Final Vote Count:</strong> At the end of the voting process, the program displays the total votes for each candidate and the overall number of votes cast.</p>
+            <h3>2. Real-Time Voting Simulation</h3>
+            <p><strong>Immediate Feedback:</strong> As votes are cast, the program updates the vote counts for each candidate in real-time. This feature demonstrates the ability to handle dynamic data within an application, providing users with instant feedback on their actions.</p>
+            <p><strong>Accurate Vote Tally:</strong> The program ensures that every vote is accurately recorded and attributed to the correct candidate, showcasing attention to detail and accuracy in software design.</p>
 
-            <h3>3. Electoral College Simulation (If Applicable)</h3>
-            <p><strong>State-Based Voting:</strong> The program can simulate an electoral college system where votes are tallied based on state-level results, providing a more complex voting scenario (if this feature is implemented).</p>
+            <h3>3. Final Vote Count and Display</h3>
+            <p><strong>Comprehensive Results:</strong> After all votes have been cast, the program displays a summary of the total votes for each candidate and the overall number of votes. This summary is presented in a clear and concise format, making it easy for users to understand the results.</p>
+            <p><strong>Visualization:</strong> The results can be further enhanced by integrating simple data visualizations, such as bar charts, to provide a graphical representation of the vote distribution (if implemented).</p>
 
-            <h3>4. CSV Export</h3>
-            <p><strong>Export Functionality:</strong> The final voting results can be exported to a CSV file, making it easy to store and analyze the results after the simulation.</p>
-            <p><strong>Customizable File Naming:</strong> Users can specify the file name for the exported CSV file, allowing for organized data management.</p>
+            <h3>4. CSV Export Functionality</h3>
+            <p><strong>Data Export:</strong> One of the key features of this program is the ability to export the final voting results to a CSV file. This functionality is crucial for record-keeping, analysis, and reporting purposes. It also demonstrates practical experience with file I/O operations in Python.</p>
+            <p><strong>Customizable Output:</strong> Users can specify the file name and save location for the CSV file, allowing for flexibility in how the data is stored and managed.</p>
+        </div>
+
+        <div class="section">
+            <h2>Technical Implementation</h2>
+            <p>The Electoral Vote Simulator is implemented using Python and makes extensive use of the Tkinter library for its graphical interface. Below is a breakdown of the key components and their roles:</p>
+            <h3>1. GUI Development</h3>
+            <p><strong>Tkinter Library:</strong> The Tkinter library is used to create the graphical interface. It includes buttons, labels, and input fields that allow users to interact with the program. The layout is designed for ease of use, ensuring that users can navigate through the voting process without confusion.</p>
+            <p><strong>Event Handling:</strong> The program uses event-driven programming to handle user interactions. Each button press triggers specific functions that update the program state, such as recording a vote or displaying the final results.</p>
+
+            <h3>2. Real-Time Data Management</h3>
+            <p><strong>Dynamic Data Handling:</strong> The program tracks votes in real-time, updating internal variables that store the vote counts for each candidate. This real-time processing is crucial for providing users with immediate feedback and accurate results.</p>
+            <p><strong>Error Handling:</strong> The program includes basic error handling to manage unexpected inputs or actions, ensuring that the simulation runs smoothly without crashes or incorrect data processing.</p>
+
+            <h3>3. Data Export and File Handling</h3>
+            <p><strong>CSV Export:</strong> The program’s ability to export results to a CSV file is implemented using Python’s built-in CSV module. This functionality allows the results to be saved in a standardized format that can be easily accessed and analyzed later.</p>
+            <p><strong>File Management:</strong> Users can choose the location and name of the CSV file, which is then generated by the program and saved to the specified directory. This feature demonstrates the ability to manage file paths and ensure that data is stored securely and accessibly.</p>
         </div>
 
         <div class="section">
             <h2>How to Use</h2>
             <ol>
                 <li>Clone the repository or download the script from <code>https://github.com/jpb1991/python</code>.</li>
-                <li>Ensure you have Python installed on your system.</li>
+                <li>Ensure Python is installed on your system.</li>
                 <li>Run the script using the following command: <code>python main.py</code>.</li>
-                <li>Follow the on-screen prompts to cast your vote:</li>
+                <li>Follow the on-screen prompts to start the simulation, enter candidate names, and cast votes:</li>
                 <ul>
-                    <li>Click the <strong>Start Simulation</strong> button to begin.</li>
-                    <li>Enter the names of the two candidates.</li>
+                    <li>Click <strong>Start Simulation</strong> to begin.</li>
+                    <li>Enter the names of the two candidates when prompted.</li>
                     <li>Cast your vote by selecting the appropriate option (1️⃣ for Candidate 1, 2️⃣ for Candidate 2).</li>
-                    <li>Click <strong>0️⃣</strong> to finish voting and see the results.</li>
+                    <li>Click <strong>0️⃣</strong> to end voting and view the results.</li>
                 </ul>
-                <li>After voting ends, the results will be displayed on the screen and saved to a CSV file in the location you choose.</li>
+                <li>The results will be displayed on the screen and saved as a CSV file in the location you choose.</li>
             </ol>
         </div>
 
         <div class="section">
-            <h2>Example Usage</h2>
-            <p><strong>🗳️ Electoral Votes Simulator</strong></p>
-            <p><strong>🏁 Start Simulation ❌ Exit</strong></p>
-            <p>[User clicks 'Start Simulation']</p>
-            <p>Enter the name of Candidate 1: Alice</p>
-            <p>Enter the name of Candidate 2: Bob</p>
-            <p>🗳️ Cast your vote: 1️⃣ for Alice, 2️⃣ for Bob, 0️⃣ to end voting</p>
-            <p>[User casts votes and ends voting]</p>
-            <p><strong>Voting has ended. Here are the results:</strong></p>
-            <p>Alice: 2 votes 🗳️</p>
-            <p>Bob: 1 vote 🗳️</p>
-            <p>Total Votes Cast: 3</p>
-            <p>Results exported to <code>vote_results.csv</code></p>
-        </div>
-
-        <div class="section">
-            <h2>Screenshots</h2>
-            <p>Screenshots of the Electoral Vote Simulator in action are available in the repository. They demonstrate various stages of the voting process, including starting the simulation, entering candidate names, casting votes, and displaying the final results.</p>
-        </div>
-
-        <div class="section">
             <h2>Application in a Professional Setting</h2>
-            <p>This project showcases key programming skills relevant to professional development, including:</p>
+            <p>This project is an excellent demonstration of several key skills that are highly relevant in a software development context:</p>
             <ul>
-                <li><strong>GUI Development:</strong> Creating user-friendly interfaces that enhance user interaction and experience.</li>
-                <li><strong>Input Handling:</strong> Managing and validating user inputs effectively within an interactive application.</li>
-                <li><strong>Data Export:</strong> Implementing file operations to save data in accessible formats like CSV for further use.</li>
-                <li><strong>Real-Time Feedback:</strong> Developing applications that provide instant updates and responses based on user actions.</li>
+                <li><strong>GUI Development:</strong> Proficiency in creating user-friendly graphical interfaces using Python’s Tkinter library, making software accessible and easy to use.</li>
+                <li><strong>Real-Time Data Processing:</strong> Ability to manage and update dynamic data in real-time, providing immediate feedback to users.</li>
+                <li><strong>File I/O Operations:</strong> Experience with file handling, specifically exporting data to CSV files, which is essential for maintaining records and conducting analysis.</li>
+                <li><strong>Problem-Solving:</strong> The project reflects strong problem-solving abilities, from designing the voting logic to handling user input and errors effectively.</li>
+                <li><strong>Attention to Detail:</strong> Careful consideration has been given to the accuracy of vote tallying and data export, ensuring that the program functions reliably in various scenarios.</li>
             </ul>
-            <p>Overall, the Electoral Vote Simulator is a valuable portfolio piece that demonstrates practical programming skills applicable in both educational and professional environments.</p>
+            <p>The Electoral Vote Simulator is a strong portfolio piece that demonstrates the ability to design and implement a complete application, making it highly relevant for roles in software development, data analysis, and user interface design.</p>
         </div>
 
         <div class="section">
             <h2>Conclusion</h2>
-            <p>The <strong>Electoral Vote Simulator</strong> is a comprehensive demonstration of Python programming, including GUI development, real-time data processing, and export capabilities. It is well-suited for educational purposes, portfolio showcases, and job interviews, highlighting a well-rounded skill set in software development.</p>
+            <p>The <strong>Electoral Vote Simulator</strong> is a comprehensive project that showcases a broad range of Python programming skills, from GUI development and real-time data processing to file handling and user interaction. Its combination of technical depth and practical application makes it an excellent example of software development capabilities, well-suited for both educational purposes and professional job interviews.</p>
         </div>
 
         <div class="footer">
