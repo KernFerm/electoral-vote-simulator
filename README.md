@@ -1,27 +1,54 @@
 # Electoral Votes Simulator 🗳️
 
-Welcome to the Electoral Votes Simulator! This Python program simulates a voting process between two candidates through an engaging graphical user interface (GUI). Users can cast their votes for either Candidate 1 or Candidate 2, and the program will keep track of the votes. When the voting ends, the program displays the final results and exports them to a CSV file.
+Welcome to the Electoral Votes Simulator! This Python application simulates a voting process between two candidates using a user-friendly graphical interface. It allows users to cast votes, see the results, and export the data to a CSV file.
 
-## How to Use
+## Features
 
-1. Clone the repository or download the script.
-2. Ensure you have Python installed on your system.
-3. Run the script using the following command:
+- **Intuitive GUI**: Simple and interactive interface for an engaging user experience.
+- **Customizable Dialogs**: Input dialogs with adjustable sizes for easier data entry.
+- **Real-Time Voting**: Cast votes for two candidates and view results instantly.
+- **CSV Export**: Save voting results to a CSV file for record-keeping and analysis.
+- **Detailed Logging**: Monitor and track user interactions and system activities.
+
+## Prerequisites
+
+Ensure Python is installed on your system. The script uses standard Python libraries, so no additional packages are required:
+
+- `tkinter` (usually included with Python)
+- `logging` (standard library)
+- `csv` (standard library)
+- `random` (standard library)
+
+## Installation
+
+1. **Download the Script**: Obtain the `main.py` script from the repository or another source.
+
+2. **Install Python**: Make sure Python is installed on your computer. If not, download and install it from [python.org](https://www.python.org/).
+
+## Usage
+
+1. **Run the Script**: Open a terminal or command prompt and navigate to the directory containing `main.py`. Execute the script with:
 
     ```bash
     python main.py
     ```
 
-4. Follow the on-screen prompts to cast your vote.
-
+2. **Start the Simulation**:
     - Click the `Start Simulation` button to begin.
-    - Enter the names of the two candidates.
-    - Cast your vote by selecting the appropriate option (1️⃣ for Candidate 1, 2️⃣ for Candidate 2).
-    - Click `0️⃣` to finish voting and see the results.
+    - Enter the names of the two candidates when prompted.
+    - Cast your vote by entering `1️⃣` for Candidate 1 or `2️⃣` for Candidate 2.
+    - Enter `0️⃣` to end voting and display the results.
 
-5. After voting ends, the results will be displayed on the screen and saved to a CSV file in the location you choose.
+3. **View Results**:
+    - After voting concludes, the results will be shown on-screen.
+    - Choose a location to save the results in a CSV file for future reference.
+
+4. **Handling Ties**:
+    - In case of a tie, you will be prompted to re-enter the candidates' names and restart the voting process.
 
 ## Screenshots
+
+Here are some screenshots of the application:
 
 ![1ST](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/1ST.png)
 ![2ND](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/2ND.png)
@@ -32,79 +59,21 @@ Welcome to the Electoral Votes Simulator! This Python program simulates a voting
 ![7TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/7TH.png)
 ![8TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/8TH.png)
 ![9TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/9TH.png)
-
-----
 ![10TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/10TH.png)
-- After the tie you have to re input the candidates name and re do the voting
-----
 
-![11TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/11TH.png)
-![12TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/12TH.png)
-![13TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/13TH.png)
-![14TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/14TH.png)
+**Note**: After a tie, you will need to re-enter the candidates' names and restart the voting.
 
-## Example CSV Output
+## Contribution
 
-```csv
-Candidate,Votes,Percentage,Electoral Votes
-JOHN ,1,33.33%,151
-STEVE,2,66.67%,387
-Total Votes,3
-```
+If you encounter issues or have suggestions for improvements, feel free to modify the script or contact the repository maintainer.
 
-## Example Usage
+## License
 
-```
-🗳️ Electoral Votes Simulator
-🏁 Start Simulation ❌ Exit
-[User clicks 'Start Simulation']
-```
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/KernFerm/electoral-vote-simulator/blob/main/LICENSE) file for details.
 
-```
-Enter the name of Candidate 1: Alice
-Enter the name of Candidate 2: Bob
-```
+## Acknowledgements
 
-```
-🗳️ Cast your vote:
-1️⃣ for Alice
-2️⃣ for Bob
-0️⃣ to end voting
-[User casts votes and ends voting]
-```
+- **`tkinter`**: For providing a powerful and flexible GUI toolkit.
+- **Python Community**: For continuous support and development of Python libraries.
 
-- Voting has ended. Here are the results:
-    - Alice: 2 votes 🗳️
-    - Bob: 1 vote 🗳️
-    - Total Votes Cast: 3
-    - Results exported to vote_results.csv
-
-## Features
-
-- **Interactive GUI:** A user-friendly graphical interface that guides users through the voting process.
-- **Real-Time Feedback:** Users receive instant feedback as votes are cast, with dynamic updates to the vote counts.
-- **Electoral College Simulation:** The program simulates an electoral college system based on state votes, providing a realistic representation of the voting process.
-- **Tie Handling:** The program detects ties in both popular and electoral votes and automatically restarts the voting process to ensure a clear winner.
-- **CSV Export:** The final results, including both popular and electoral votes, are saved to a CSV file for easy record-keeping and analysis.
-- **Error Handling:** Robust error handling ensures the program runs smoothly even if unexpected inputs are encountered.
-
-## Contributing
-- Contributions are welcome! Please feel free to submit a Pull Request with your improvements, bug fixes, or new features.
-
----
-
-Happy Voting! 🎉
-
-## Acknowledgements 
-
-- **Contributed by:** [Bubbles The Dev](https://github.com/kernferm)
-- **Forked from:** [jpb1991](https://github.com/jpb1991)
-
-
-
-
-
-
-
-
-
+Enjoy using the Electoral Votes Simulator! If you have any questions or feedback, don't hesitate to reach out.
