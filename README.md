@@ -32,8 +32,12 @@ Welcome to the Electoral Votes Simulator! This Python program simulates a voting
 ![7TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/7TH.png)
 ![8TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/8TH.png)
 ![9TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/9TH.png)
+
+----
 ![10TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/10TH.png)
-## after the tie you have to re input the candidates name and re do the voting
+- After the tie you have to re input the candidates name and re do the voting
+----
+
 ![11TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/11TH.png)
 ![12TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/12TH.png)
 ![13TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/13TH.png)
