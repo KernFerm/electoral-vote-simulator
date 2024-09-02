@@ -24,50 +24,29 @@ Welcome to the Electoral Votes Simulator! This Python program simulates a voting
 
 ## Screenshots
 
-### 1. Initial Screen
-![1ST](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/1ST.png)
 
-### 2. Candidate Input
+![1ST](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/1ST.png)
 ![2ND](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/2ND.png)
 ![3RD](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/3RD.png)
-### 3. Voting Screen
 ![4TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/4TH.png)
-
-### 4. Voting Progress
-![6TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/6TH.png)
-![8TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/8TH.png)
-### 5. Voting Completed
 ![5TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/5TH.png)
-
-### 6. Results Display
-
-
-### 7. Electoral College Simulation
+![6TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/6TH.png)
 ![7TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/7TH.png)
-
-### 8. Electoral College Results
-
-
-### 9. Final Result
+![8TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/8TH.png)
 ![9TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/9TH.png)
-
-### 10. CSV Export
-![12TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/12TH.png)
-
-### 11. Restarting Voting Process
-![11TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/11TH.png)
-
-### 12. Tie Warning
-
 ![10TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/10TH.png)
-
-### 13. Election Outcome
+![11TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/11TH.png)
+![12TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/12TH.png)
 ![13TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/13TH.png)
-
-### 14. Application Exit
 ![14TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/14TH.png)
 
 
+```CSV
+Candidate,Votes,Percentage,Electoral Votes
+JOHN ,1,33.33%,151
+STEVE,2,66.67%,387
+Total Votes,3
+```
 
 ## Example Usage
 
