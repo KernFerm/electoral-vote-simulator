@@ -26,10 +26,7 @@ Welcome to the Electoral Votes Simulator! This Python program simulates a voting
 
 
 ```
-Candidate,Votes,Percentage,Electoral Votes
-h,1,50.00%,265
-f,1,50.00%,273
-Total Votes,2
+put csv 
 ```
 
 ## Example Usage
