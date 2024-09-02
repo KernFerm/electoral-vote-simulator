@@ -34,7 +34,12 @@ Welcome to the Electoral Votes Simulator! This Python program simulates a voting
 ![Screenshot 9](screenshots/Screenshot%202024-09-01%20221347.png)
 ![Screenshot 10](screenshots/Screenshot%202024-09-01%20221408.png)
 
-
+```
+Candidate,Votes,Percentage,Electoral Votes
+h,1,50.00%,265
+f,1,50.00%,273
+Total Votes,2
+```
 
 ## Example Usage
 
