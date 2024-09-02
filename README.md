@@ -21,7 +21,50 @@ Welcome to the Electoral Votes Simulator! This Python program simulates a voting
 
 5. After voting ends, the results will be displayed on the screen and saved to a CSV file in the location you choose.
 
+
 ## Screenshots
+
+### 1. Initial Screen
+![1ST](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/1ST.png)
+
+### 2. Candidate Input
+![2ND](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/2ND.png)
+
+### 3. Voting Screen
+![3RD](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/3RD.png)
+
+### 4. Voting Progress
+![4TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/4TH.png)
+
+### 5. Voting Completed
+![5TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/5TH.png)
+
+### 6. Results Display
+![6TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/6TH.png)
+
+### 7. Electoral College Simulation
+![7TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/7TH.png)
+
+### 8. Electoral College Results
+![8TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/8TH.png)
+
+### 9. Final Result
+![9TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/9TH.png)
+
+### 10. CSV Export
+![10TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/10TH.png)
+
+### 11. Restarting Voting Process
+![11TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/11TH.png)
+
+### 12. Tie Warning
+![12TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/12TH.png)
+
+### 13. Election Outcome
+![13TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/13TH.png)
+
+### 14. Application Exit
+![14TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/14TH.png)
 
 
 
