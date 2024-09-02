@@ -3,6 +3,18 @@ import random
 import tkinter as tk
 from tkinter import messagebox, simpledialog, filedialog
 
+# Custom dialog to increase the size of input boxes
+class CustomDialog(simpledialog._QueryString):
+    def __init__(self, master, title, prompt):
+        self.entry_width = 40  # Set the desired width of the entry box here
+        super().__init__(master, title, prompt)
+
+    def body(self, master):
+        tk.Label(master, text=self.prompt, justify=tk.LEFT, wraplength=400).grid(row=0, padx=5, pady=5)
+        self.entry = tk.Entry(master, name="entry", width=self.entry_width)
+        self.entry.grid(row=1, padx=5, pady=5)
+        return self.entry
+
 # All U.S. states with their respective electoral votes
 states = {
     "Alabama": 9,
@@ -71,13 +83,6 @@ def cast_vote(vote, candidate_1_votes, candidate_2_votes, total_votes, candidate
         messagebox.showerror("Invalid Vote", "Please enter a valid vote (1 or 2).")
     return candidate_1_votes, candidate_2_votes, total_votes
 
-def display_results(candidate_1_votes, candidate_2_votes, total_votes, candidate_1_name, candidate_2_name):
-    result_text = f"\nVoting has ended. Here are the results:\n\n"
-    result_text += f"{candidate_1_name}: {candidate_1_votes} votes 🗳️\n"
-    result_text += f"{candidate_2_name}: {candidate_2_votes} votes 🗳️\n"
-    result_text += f"Total Votes Cast: {total_votes}\n"
-    messagebox.showinfo("Results", result_text)
-
 def export_results_to_csv(candidate_1_votes, candidate_2_votes, total_votes, candidate_1_name, candidate_2_name, candidate_1_electoral_votes, candidate_2_electoral_votes, filename):
     candidate_1_percentage = (candidate_1_votes / total_votes) * 100 if total_votes > 0 else 0
     candidate_2_percentage = (candidate_2_votes / total_votes) * 100 if total_votes > 0 else 0
@@ -108,34 +113,72 @@ def simulate_electoral_college(candidate_1_name, candidate_2_name):
 
     result_text += f"\n{candidate_1_name}: {candidate_1_electoral_votes} electoral votes 🗳️\n"
     result_text += f"{candidate_2_name}: {candidate_2_electoral_votes} electoral votes 🗳️\n"
-    messagebox.showinfo("Electoral College Results", result_text)
 
-    return candidate_1_electoral_votes, candidate_2_electoral_votes
+    # Determine the winner based on electoral votes
+    if candidate_1_electoral_votes > candidate_2_electoral_votes:
+        result_text += f"\n{candidate_1_name} wins the Electoral College with {candidate_1_electoral_votes} votes! 🎉"
+    else:
+        result_text += f"\n{candidate_2_name} wins the Electoral College with {candidate_2_electoral_votes} votes! 🎉"
+
+    return candidate_1_electoral_votes, candidate_2_electoral_votes, result_text
 
 def run_simulator():
-    candidate_1_name = simpledialog.askstring("Candidate 1", "Enter the name of Candidate 1:")
-    candidate_2_name = simpledialog.askstring("Candidate 2", "Enter the name of Candidate 2:")
-    output_file = filedialog.asksaveasfilename(defaultextension=".csv", filetypes=[("CSV files", "*.csv")], title="Save results as")
-
-    if not candidate_1_name or not candidate_2_name or not output_file:
-        messagebox.showerror("Input Error", "All fields are required. Please try again.")
-        return
-
-    candidate_1_votes = 0
-    candidate_2_votes = 0
-    total_votes = 0
-
+    global root  # Ensure root is declared globally
     while True:
-        vote = simpledialog.askinteger("Vote", f"🗳️ Cast your vote:\n1️⃣ for {candidate_1_name}\n2️⃣ for {candidate_2_name}\n0️⃣ to end voting", minvalue=0, maxvalue=2)
-        if vote == 0:
-            break
-        candidate_1_votes, candidate_2_votes, total_votes = cast_vote(vote, candidate_1_votes, candidate_2_votes, total_votes, candidate_1_name, candidate_2_name)
+        candidate_1_name = CustomDialog(root, "Candidate 1", "Enter the name of Candidate 1:").result
+        if candidate_1_name is None:
+            return  # User cancelled
 
-    display_results(candidate_1_votes, candidate_2_votes, total_votes, candidate_1_name, candidate_2_name)
-    candidate_1_electoral_votes, candidate_2_electoral_votes = simulate_electoral_college(candidate_1_name, candidate_2_name)
-    export_results_to_csv(candidate_1_votes, candidate_2_votes, total_votes, candidate_1_name, candidate_2_name, candidate_1_electoral_votes, candidate_2_electoral_votes, output_file)
+        candidate_2_name = CustomDialog(root, "Candidate 2", "Enter the name of Candidate 2:").result
+        if candidate_2_name is None:
+            return  # User cancelled
+
+        output_file = filedialog.asksaveasfilename(defaultextension=".csv", filetypes=[("CSV files", "*.csv")], title="Save results as")
+        if not output_file:
+            return  # User cancelled
+
+        candidate_1_votes = 0
+        candidate_2_votes = 0
+        total_votes = 0
+
+        while True:
+            vote = simpledialog.askinteger("Vote", f"🗳️ Cast your vote:\n1️⃣ for {candidate_1_name}\n2️⃣ for {candidate_2_name}\n0️⃣ to end voting", minvalue=0, maxvalue=2)
+            if vote is None:
+                return  # User cancelled
+            if vote == 0:
+                break
+            candidate_1_votes, candidate_2_votes, total_votes = cast_vote(vote, candidate_1_votes, candidate_2_votes, total_votes, candidate_1_name, candidate_2_name)
+
+        # Determine winner based on total votes
+        if candidate_1_votes == candidate_2_votes:
+            messagebox.showwarning("Tie!", f"The votes are tied at {candidate_1_votes} to {candidate_2_votes}. The voting process will be restarted.")
+            continue  # Restart the voting process
+        elif candidate_1_votes > candidate_2_votes:
+            messagebox.showinfo("Winner", f"{candidate_1_name} wins with {candidate_1_votes} votes!")
+        else:
+            messagebox.showinfo("Winner", f"{candidate_2_name} wins with {candidate_2_votes} votes!")
+
+        candidate_1_electoral_votes, candidate_2_electoral_votes, result_text = simulate_electoral_college(candidate_1_name, candidate_2_name)
+
+        # Check for a tie in the electoral votes
+        if candidate_1_electoral_votes == candidate_2_electoral_votes:
+            messagebox.showwarning("Tie!", f"There is a tie in electoral votes: {candidate_1_electoral_votes} to {candidate_2_electoral_votes}. The voting process will be restarted.")
+            continue  # Restart the voting process
+        else:
+            display_results(candidate_1_votes, candidate_2_votes, total_votes, candidate_1_name, candidate_2_name)
+            messagebox.showinfo("Electoral College Results", result_text)
+            export_results_to_csv(candidate_1_votes, candidate_2_votes, total_votes, candidate_1_name, candidate_2_name, candidate_1_electoral_votes, candidate_2_electoral_votes, output_file)
+            break
+
+def display_results(candidate_1_votes, candidate_2_votes, total_votes, candidate_1_name, candidate_2_name):
+    result_text = f"\nVoting has ended. Here are the results:\n\n"
+    result_text += f"{candidate_1_name}: {candidate_1_votes} votes 🗳️\n"
+    result_text += f"{candidate_2_name}: {candidate_2_votes} votes 🗳️\n"
+    result_text += f"Total Votes Cast: {total_votes}\n"
+    messagebox.showinfo("Results", result_text)
 
 def main():
+    global root
     root = tk.Tk()
     root.title("🗳️ Electoral Votes Simulator")
 
