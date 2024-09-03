@@ -97,7 +97,7 @@ The logs are written in the following format:
 2024-09-03 12:35:05,678 - INFO - Current votes - Candidate 1: 5, Candidate 2: 3, Total: 8
 2024-09-03 12:35:10,456 - INFO - Results exported to /path/to/results.csv
 ```
-
+- Note: The application uses the `os` module to ensure that file paths are accurate and absolute, especially when exporting results to a CSV file. This helps avoid issues related to relative paths and ensures that the log accurately reflects the correct file location.
 
 ## Contribution
 
