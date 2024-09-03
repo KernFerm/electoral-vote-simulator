@@ -35,3 +35,6 @@ screenshots/
 
 # PDF files
 *.pdf
+
+# Notes file
+notes.txt
