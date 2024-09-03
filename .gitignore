@@ -32,3 +32,6 @@ Thumbs.db
 
 # Screenshots folder
 screenshots/
+
+# PDF files
+*.pdf
