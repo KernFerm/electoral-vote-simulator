@@ -22,7 +22,6 @@ Ensure Python is installed on your system. The script uses standard Python libra
 ## Installation
 
 1. **Download the Script**: Obtain the `main.py` script from the repository or another source.
-
 2. **Install Python**: Make sure Python is installed on your computer. If not, download and install it from [python.org](https://www.python.org/).
 
 ## Usage
@@ -46,6 +45,7 @@ Ensure Python is installed on your system. The script uses standard Python libra
 4. **Handling Ties**:
     - In case of a tie, you will be prompted to re-enter the candidates' names and restart the voting process.
 
+
 ## Screenshots
 
 Here are some screenshots of the application:
@@ -60,8 +60,44 @@ Here are some screenshots of the application:
 ![8TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/8TH.png)
 ![9TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/9TH.png)
 ![10TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/10TH.png)
+![11TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/11TH.png)
+![12TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/12TH.png)
+![13TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/13TH.png)
+![14TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/14TH.png)
+![15TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/15TH.png)
 
-**Note**: After a tie, you will need to re-enter the candidates' names and restart the voting.
+## Logging
+
+The Electoral Votes Simulator includes detailed logging functionality to help monitor user interactions and system activities. The logging feature is configured at the start of the script and records significant events during the application's runtime. 
+
+### How Logging is Used
+
+1. **Initialization**:
+   - When the application starts, a log entry is created to indicate the launch of the simulator.
+
+2. **User Actions**:
+   - Every time a vote is cast, the system logs the vote details, including which candidate received the vote and the current vote count.
+   - If the user cancels the simulation or voting process, this action is also logged for future reference.
+
+3. **Simulation Results**:
+   - The results of the voting process, including the final vote tally for each candidate and the overall winner, are logged.
+   - Electoral College simulation results are logged, detailing how many electoral votes each candidate received.
+
+4. **Data Export**:
+   - When the voting results are exported to a CSV file, the system logs the file path and confirms the successful export.
+
+### Log Format
+
+The logs are written in the following format:
+
+**Example:**
+```
+2024-09-03 12:34:56,789 - INFO - Electoral Votes Simulator started.
+2024-09-03 12:35:01,234 - INFO - Vote cast: votea
+2024-09-03 12:35:05,678 - INFO - Current votes - Candidate 1: 5, Candidate 2: 3, Total: 8
+2024-09-03 12:35:10,456 - INFO - Results exported to /path/to/results.csv
+```
+- Note: The application uses the `os` module to ensure that file paths are accurate and absolute, especially when exporting results to a CSV file. This helps avoid issues related to relative paths and ensures that the log accurately reflects the correct file location.
 
 ## Contribution
 
