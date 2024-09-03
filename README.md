@@ -66,6 +66,38 @@ Here are some screenshots of the application:
 ![14TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/14TH.png)
 ![15TH](https://github.com/KernFerm/electoral-vote-simulator/blob/main/screenshots/15TH.png)
 
+## Logging
+
+The Electoral Votes Simulator includes detailed logging functionality to help monitor user interactions and system activities. The logging feature is configured at the start of the script and records significant events during the application's runtime. 
+
+### How Logging is Used
+
+1. **Initialization**:
+   - When the application starts, a log entry is created to indicate the launch of the simulator.
+
+2. **User Actions**:
+   - Every time a vote is cast, the system logs the vote details, including which candidate received the vote and the current vote count.
+   - If the user cancels the simulation or voting process, this action is also logged for future reference.
+
+3. **Simulation Results**:
+   - The results of the voting process, including the final vote tally for each candidate and the overall winner, are logged.
+   - Electoral College simulation results are logged, detailing how many electoral votes each candidate received.
+
+4. **Data Export**:
+   - When the voting results are exported to a CSV file, the system logs the file path and confirms the successful export.
+
+### Log Format
+
+The logs are written in the following format:
+
+**Example:**
+```
+2024-09-03 12:34:56,789 - INFO - Electoral Votes Simulator started.
+2024-09-03 12:35:01,234 - INFO - Vote cast: votea
+2024-09-03 12:35:05,678 - INFO - Current votes - Candidate 1: 5, Candidate 2: 3, Total: 8
+2024-09-03 12:35:10,456 - INFO - Results exported to /path/to/results.csv
+```
+
 
 ## Contribution
 
