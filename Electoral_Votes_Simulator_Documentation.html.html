@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electoral Votes Simulator Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 5px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        p {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Electoral Votes Simulator Documentation</h1>
+        <p>This documentation presents the Electoral Votes Simulator, a Python-based application developed to simulate the voting process in U.S. presidential elections. The application uses a graphical user interface (GUI) created with Tkinter, and it allows users to cast votes, calculate total and electoral votes, and export the results to a CSV file.</p>
+
+        <h2>Dependencies</h2>
+        <ul>
+            <li>Python 3.x</li>
+            <li>Tkinter library</li>
+            <li><code>csv</code> for exporting results</li>
+            <li><code>random</code> for simulating random outcomes</li>
+            <li><code>os</code> for managing file paths</li>
+            <li><code>logging</code> for internal logging of application processes</li>
+        </ul>
+
+        <h2>Application Features</h2>
+        <p>The Electoral Votes Simulator incorporates several features to enhance user interaction and provide accurate simulations:</p>
+        <ul>
+            <li><strong>Custom Input Dialogs:</strong> Utilizes custom dialog classes for gathering user input, ensuring an intuitive user experience.</li>
+            <li><strong>Voting System:</strong> Simulates a voting system where users can vote for one of two candidates in a mock electoral process.</li>
+            <li><strong>Result Calculation:</strong> Calculates and displays total votes and electoral votes based on user input and random state outcomes.</li>
+            <li><strong>Export Functionality:</strong> Allows users to export the final voting and electoral results to a CSV file for record-keeping or further analysis.</li>
+        </ul>
+
+        <h2>Code Overview</h2>
+        <p>The main components of the application are detailed below:</p>
+        <ul>
+            <li><strong>CustomDialog:</strong> A subclass of <code>simpledialog.Dialog</code> tailored to enhance the size and usability of input boxes.</li>
+            <li><strong>VoteDialog:</strong> A specialized dialog for casting votes, providing a straightforward and error-free voting process.</li>
+            <li><strong>Logging Configuration:</strong> Set up to log key actions within the application, aiding in debugging and user interaction tracking.</li>
+            <li><strong>Electoral College Simulation:</strong> A function that simulates the electoral college vote distribution based on random outcomes in each state.</li>
+        </ul>
+
+        <h2>Usage</h2>
+        <p>To run the simulator, execute the main Python script. The GUI will prompt the user through the voting process, with options to start the simulation, cast votes, and export results. Logging provides a detailed report of each step in the console.</p>
+
+        <h2>Conclusion</h2>
+        <p>The Electoral Votes Simulator serves as an educational tool to understand the complexity of U.S. elections and provides a hands-on approach to learning about the electoral process. It demonstrates the application of GUI programming in Python and practical use of data handling and user input validation.</p>
+
+        <p>Written by Bubbles The Dev</p>
+        <p>For videogame fan aka jpb1991</p>
+        <p>I hope you get the job! 😊</p>
+    </div>
+</body>
+</html>
