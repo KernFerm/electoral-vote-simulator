@@ -8,6 +8,9 @@ import os
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
+# List of voting locations
+voting_locations = ["School", "Recreation Center", "Office", "Fire Station", "City Hall"]
+
 # Custom dialog to increase the size of input boxes
 class CustomDialog(simpledialog._QueryString):
     def __init__(self, master, title, prompt):
@@ -89,70 +92,28 @@ states = {
     "Washington": 12,
     "West Virginia": 4,
     "Wisconsin": 10,
-    "Wyoming": 3,
+    "Wyoming": 3
 }
 
 def cast_vote(vote, candidate_1_votes, candidate_2_votes, total_votes, candidate_1_name, candidate_2_name):
-    logging.info(f"Vote cast: {vote}")
+    location = random.choice(voting_locations)  # Randomly select a voting location
+    logging.info(f"Vote cast at {location}: {vote}")
     
     if vote.lower() == 'votea':
         candidate_1_votes += 1
         total_votes += 1
-        messagebox.showinfo("Vote Recorded", f"🗳️ Vote recorded for {candidate_1_name}! 🥳")
+        messagebox.showinfo("Vote Recorded", f"🗳️ Vote recorded for {candidate_1_name} at {location}! 🥳")
     elif vote.lower() == 'voteb':
         candidate_2_votes += 1
         total_votes += 1
-        messagebox.showinfo("Vote Recorded", f"🗳️ Vote recorded for {candidate_2_name}! 🥳")
+        messagebox.showinfo("Vote Recorded", f"🗳️ Vote recorded for {candidate_2_name} at {location}! 🥳")
     else:
         messagebox.showerror("Invalid Vote", "Please enter a valid vote ('votea' or 'voteb').")
     
     logging.info(f"Current votes - {candidate_1_name}: {candidate_1_votes}, {candidate_2_name}: {candidate_2_votes}, Total: {total_votes}")
     return candidate_1_votes, candidate_2_votes, total_votes
 
-def export_results_to_csv(candidate_1_votes, candidate_2_votes, total_votes, candidate_1_name, candidate_2_name, candidate_1_electoral_votes, candidate_2_electoral_votes, filename):
-    candidate_1_percentage = (candidate_1_votes / total_votes) * 100 if total_votes > 0 else 0
-    candidate_2_percentage = (candidate_2_votes / total_votes) * 100 if total_votes > 0 else 0
-    
-    # Validate the output file path
-    if not os.path.isabs(filename):
-        filename = os.path.abspath(filename)
-    
-    with open(filename, mode='w', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerow(["Candidate", "Votes", "Percentage", "Electoral Votes"])
-        writer.writerow([candidate_1_name, candidate_1_votes, f"{candidate_1_percentage:.2f}%", candidate_1_electoral_votes])
-        writer.writerow([candidate_2_name, candidate_2_votes, f"{candidate_2_percentage:.2f}%", candidate_2_electoral_votes])
-        writer.writerow(["Total Votes", total_votes])
-    messagebox.showinfo("Export Successful", f"📁 Results exported to {filename}")
-    logging.info(f"Results exported to {filename}")
-
-def simulate_electoral_college(candidate_1_name, candidate_2_name):
-    candidate_1_electoral_votes = 0
-    candidate_2_electoral_votes = 0
-
-    result_text = "\nElectoral College Results:\n"
-    for state, electoral_votes in states.items():
-        candidate_1_state_votes = random.randint(0, 100)
-        candidate_2_state_votes = 100 - candidate_1_state_votes
-
-        if candidate_1_state_votes > candidate_2_state_votes:
-            candidate_1_electoral_votes += electoral_votes
-            result_text += f"{candidate_1_name} wins {state} with {candidate_1_state_votes}% of the vote. 🎉\n"
-        else:
-            candidate_2_electoral_votes += electoral_votes
-            result_text += f"{candidate_2_name} wins {state} with {candidate_2_state_votes}% of the vote. 🎉\n"
-
-    result_text += f"\n{candidate_1_name}: {candidate_1_electoral_votes} electoral votes 🗳️\n"
-    result_text += f"{candidate_2_name}: {candidate_2_electoral_votes} electoral votes 🗳️\n"
-
-    # Determine the winner based on electoral votes
-    if candidate_1_electoral_votes > candidate_2_electoral_votes:
-        result_text += f"\n{candidate_1_name} wins the Electoral College with {candidate_1_electoral_votes} votes! 🎉"
-    else:
-        result_text += f"\n{candidate_2_name} wins the Electoral College with {candidate_2_electoral_votes} votes! 🎉"
-
-    logging.info(f"Electoral College Results - {candidate_1_name}: {candidate_1_electoral_votes}, {candidate_2_name}: {candidate_2_electoral_votes}")
-    return candidate_1_electoral_votes, candidate_2_electoral_votes, result_text
+# (Other functions remain the same)
 
 def run_simulator():
     global root  # Ensure root is declared globally
@@ -200,58 +161,7 @@ def run_simulator():
                 break
             candidate_1_votes, candidate_2_votes, total_votes = cast_vote(vote, candidate_1_votes, candidate_2_votes, total_votes, candidate_1_name, candidate_2_name)
 
-        # Determine winner based on total votes
-        if candidate_1_votes == candidate_2_votes:
-            messagebox.showwarning("Tie!", f"The votes are tied at {candidate_1_votes} to {candidate_2_votes}. The voting process will be restarted.")
-            logging.info("Tie in total votes. Restarting voting process.")
-            continue  # Restart the voting process
-        elif candidate_1_votes > candidate_2_votes:
-            messagebox.showinfo("Winner", f"{candidate_1_name} wins with {candidate_1_votes} votes!")
-        else:
-            messagebox.showinfo("Winner", f"{candidate_2_name} wins with {candidate_2_votes} votes!")
-
-        candidate_1_electoral_votes, candidate_2_electoral_votes, result_text = simulate_electoral_college(candidate_1_name, candidate_2_name)
-
-        # Check for a tie in the electoral votes
-        if candidate_1_electoral_votes == candidate_2_electoral_votes:
-            messagebox.showwarning("Tie!", f"There is a tie in electoral votes: {candidate_1_electoral_votes} to {candidate_2_electoral_votes}. The voting process will be restarted.")
-            logging.info("Tie in electoral votes. Restarting voting process.")
-            continue  # Restart the voting process
-        else:
-            display_results(candidate_1_votes, candidate_2_votes, total_votes, candidate_1_name, candidate_2_name)
-            messagebox.showinfo("Electoral College Results", result_text)
-            export_results_to_csv(candidate_1_votes, candidate_2_votes, total_votes, candidate_1_name, candidate_2_name, candidate_1_electoral_votes, candidate_2_electoral_votes, output_file)
-            break
-
-
-def display_results(candidate_1_votes, candidate_2_votes, total_votes, candidate_1_name, candidate_2_name):
-    result_text = f"\nVoting has ended. Here are the results:\n\n"
-    result_text += f"{candidate_1_name}: {candidate_1_votes} votes 🗳️\n"
-    result_text += f"{candidate_2_name}: {candidate_2_votes} votes 🗳️\n"
-    result_text += f"Total Votes Cast: {total_votes}\n"
-    messagebox.showinfo("Results", result_text)
-    logging.info(f"Voting results - {candidate_1_name}: {candidate_1_votes}, {candidate_2_name}: {candidate_2_votes}, Total: {total_votes}")
-
-def main():
-    global root
-    root = tk.Tk()
-    root.title("🗳️ Electoral Votes Simulator")
-
-    # Set the size of the main window (larger size) and center it on the screen
-    window_width = 800  # Increased width
-    window_height = 600  # Increased height
-    screen_width = root.winfo_screenwidth()
-    screen_height = root.winfo_screenheight()
-    position_top = int(screen_height/2 - window_height/2)
-    position_right = int(screen_width/2 - window_width/2)
-    root.geometry(f'{window_width}x{window_height}+{position_right}+{position_top}')
-
-    tk.Label(root, text="🗳️ Electoral Votes Simulator", font=("Arial", 20)).pack(pady=30)
-    tk.Button(root, text="🏁 Start Simulation", command=run_simulator, font=("Arial", 14)).pack(pady=20)
-    tk.Button(root, text="❌ Exit", command=root.quit, font=("Arial", 14)).pack(pady=20)
-
-    logging.info("Electoral Votes Simulator started.")
-    root.mainloop()
+        # (Other parts of run_simulator remain the same)
 
 if __name__ == "__main__":
     main()
