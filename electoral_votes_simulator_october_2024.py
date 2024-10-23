@@ -184,7 +184,7 @@ def end_election():
     if candidate_1_sum > candidate_2_sum:
         print(f"Candidate 1 becomes the new President of the United States!")
     if candidate_2_sum > candidate_1_sum:
-        print(f"Candidate 1 becomes the new President of the United States!")
+        print(f"Candidate 2 becomes the new President of the United States!")
     print(f"-" * 60)
 
     raise SystemExit
