@@ -97,7 +97,7 @@ def state_voting(location, candidate_1_electoral_votes, candidate_2_electoral_vo
         while True:
 
             vote = input(
-                f"Vote for Candidate 1 ('1') or Candidate 2 ('2') or CLOSE the polls. "
+                f"Vote for Candidate 1 ('1') or Candidate 2 ('2') or close ('close') the polls. "
             )
 
             if vote not in ["1", "2", "CLOSE", "close"]:
@@ -169,7 +169,7 @@ def end_election():
         candidate_2_sum += counted_locations[k][2]
 
     print(f"-" * 60)
-    print(f"Election night has ended!")
+    print(f"This location is closed!")
     print(f"-" * 60)
     print(f"Total votes cast across the country : {sum_votes}")
 
