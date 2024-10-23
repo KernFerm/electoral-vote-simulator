@@ -1,5 +1,5 @@
-# Initialize vote counts and electoral votes
 # Thanks for Stiched aka discord user id 220689361627250688 for implementing a lot of the code to this project as well as additional discord members for their help and support.
+# Initialize vote counts and electoral votes
 total_votes = 0
 candidate_1_electoral_votes = 0
 candidate_2_electoral_votes = 0
