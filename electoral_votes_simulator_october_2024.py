@@ -1,12 +1,11 @@
-# Thanks for Stiched aka discord user id 220689361627250688 for implementing a lot of the code to this project as well as additional discord members for their help and support.
 # Initialize vote counts and electoral votes
 total_votes = 0
 candidate_1_electoral_votes = 0
 candidate_2_electoral_votes = 0
-
+candidate_1_popular_votes = 0  # New variable for Candidate 1 popular votes
+candidate_2_popular_votes = 0  # New variable for Candidate 2 popular votes
 
 # Electoral Locations and their Electoral Votes
-
 electoral_votes_locations = {
     "Alabama": 9,
     "Alaska": 3,
@@ -63,60 +62,49 @@ electoral_votes_locations = {
 
 counted_locations = {}
 
-
 def choose_vote_location(candidate_1_electoral_votes, candidate_2_electoral_votes):
-
     location = input("\nSelect your location (or type 'end' to end election): ").strip()
 
     if location in electoral_votes_locations:
         print(location)
-
         state_voting(location, candidate_1_electoral_votes, candidate_2_electoral_votes)
-
     elif location != "end" and location not in electoral_votes_locations:
         print("Invalid State Chosen")
-
     elif location == "end":
         end_election()
 
     return location
 
-
 def state_voting(location, candidate_1_electoral_votes, candidate_2_electoral_votes):
+    global candidate_1_popular_votes, candidate_2_popular_votes  # Access global variables
 
     if location in counted_locations:
-
         print(f"{location} has already voted and the polls are closed.")
-
     else:
-
         candidate_1_state_votes = 0
         candidate_2_state_votes = 0
         total_state_votes = 0
         winner = ""
 
         while True:
-
             vote = input(
                 f"Vote for Candidate 1 ('1') or Candidate 2 ('2') or close ('close') the polls. "
             )
 
             if vote not in ["1", "2", "CLOSE", "close"]:
                 print("Invalid selection")
-
             else:
                 if vote == "1":
                     candidate_1_state_votes += 1
+                    candidate_1_popular_votes += 1  # Increment popular votes
                     total_state_votes += 1
                     continue
-
                 elif vote == "2":
                     candidate_2_state_votes += 1
+                    candidate_2_popular_votes += 1  # Increment popular votes
                     total_state_votes += 1
                     continue
-
                 elif vote in ["CLOSE", "close"]:
-
                     print(f"-" * 60)
                     print(f"The total votes cast in {location} is {total_state_votes}")
                     print(f"-" * 60)
@@ -126,17 +114,10 @@ def state_voting(location, candidate_1_electoral_votes, candidate_2_electoral_vo
 
                     if candidate_1_state_votes > candidate_2_state_votes:
                         winner = "Candidate 1"
-                        candidate_1_electoral_votes += electoral_votes_locations[
-                            location
-                        ]
+                        candidate_1_electoral_votes += electoral_votes_locations[location]
                     if candidate_2_state_votes > candidate_1_state_votes:
                         winner = "Candidate 2"
-                        candidate_2_electoral_votes += electoral_votes_locations[
-                            location
-                        ]
-
-                    # if candidate_1_votes == candidate_2_votes:
-                    # code for handling a tie breaker
+                        candidate_2_electoral_votes += electoral_votes_locations[location]
 
                     print(
                         f"The winner of {location} is {winner} gaining {electoral_votes_locations[location]} electoral votes"
@@ -150,9 +131,7 @@ def state_voting(location, candidate_1_electoral_votes, candidate_2_electoral_vo
 
                     break
 
-
 def end_election():
-
     sum_votes = 0
     candidate_1_sum = 0
     candidate_2_sum = 0
@@ -175,10 +154,11 @@ def end_election():
     print(f"Total votes cast across the country : {sum_votes}")
 
     print(f"-" * 60)
-
     print(f"Candidate 1 - Total Electoral Votes : {candidate_1_sum}")
+    print(f"Candidate 1 - Total Popular Votes : {candidate_1_popular_votes}")  # Display popular votes
     print(f"-" * 60)
     print(f"Candidate 2 - Total Electoral Votes : {candidate_2_sum}")
+    print(f"Candidate 2 - Total Popular Votes : {candidate_2_popular_votes}")  # Display popular votes
     print(f"-" * 60)
 
     if candidate_1_sum > candidate_2_sum:
@@ -188,7 +168,6 @@ def end_election():
     print(f"-" * 60)
 
     raise SystemExit
-
 
 while True:
     choose_vote_location(candidate_1_electoral_votes, candidate_2_electoral_votes)
