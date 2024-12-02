@@ -38,3 +38,6 @@ screenshots/
 
 # Notes file
 notes.txt
+
+# Batch file
+*.bat
